@@ -48,12 +48,12 @@
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
 
-    - name: Setup zsh and ohmyzsh for the user
+    - name: Setup zsh and customize it for the user
       become: yes
       become_user: "{{ username }}"
       block:
-        - name: Clone ohmyzsh repo
+        - name: Clone machfiles repo
           git:
-            repo: "https://github.com/ohmyzsh/ohmyzsh.git"
-            dest: "~{{ username }}/.oh-my-zsh"
-
+            repo: "https://github.com/fredrik-hansen/machfiles.git"
+            dest: "~{{ username }}/"
+                
