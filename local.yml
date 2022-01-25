@@ -44,7 +44,7 @@
     - name: add ansible-pull cron job
       cron:
         name: ansible auto-provision
-        user: {{ ansible_user }}
+        user: "{{ ansible_user }}"
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
 
