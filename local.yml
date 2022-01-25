@@ -58,12 +58,12 @@
         - name: Setup zsh 
           command: "chdir=~{{ username }}/Machfiles stow zsh"
     - name: Global zprofile
-        become: yes
-        copy:
-          src: files/zprofile
-          dest: /etc/zsh/zprofile
-          owner: root
-          group: root
-          mode: 0640
+      become: yes
+      copy:
+        src: files/zprofile
+        dest: /etc/zsh/zprofile
+        owner: root
+        group: root
+        mode: 0640
 
 
