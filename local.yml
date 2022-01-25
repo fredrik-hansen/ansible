@@ -55,5 +55,5 @@
         - name: Clone machfiles repo
           git:
             repo: "https://github.com/fredrik-hansen/machfiles.git"
-            dest: "~{{ username }}/"
+            dest: "~{{ username }}/Machfiles"
                 
