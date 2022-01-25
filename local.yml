@@ -21,6 +21,8 @@
         - docker-compose
         - feh
         - stow
+        - fnm
+        - zoxide
   tasks:
 
     - name: Install base packages
