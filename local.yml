@@ -2,12 +2,30 @@
 - hosts: localhost
   connection: local
   become: true
-
-  tasks:
-  - name: install base packages
-    package: 
-      name: 
+  
+  vars:
+    base_pkgs:
         - htop
         - neovim
         - net-tools
+        - zsh
+        - tmux
+        - git
+        - git-lfs
+        - git-extras
+        - fzf
+        - ansible
+        - colorize
+        - common-aliases
+        - docker
+        - docker-compose
 
+
+  tasks:
+
+    - name: Install base packages
+      apt:
+        name: "{{ base_pkgs }}"
+        state: present
+        update_cache: yes
+ 
