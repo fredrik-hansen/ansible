@@ -13,7 +13,6 @@
         - git
         - git-lfs
         - git-extras
-        - fzf
         - ansible
         - colorize
         - common-aliases
