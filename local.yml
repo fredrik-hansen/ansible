@@ -15,7 +15,6 @@
         - git-extras
         - ansible
         - colorize
-        - common-aliases
         - docker
         - docker-compose
 
