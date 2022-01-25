@@ -20,6 +20,8 @@
         - docker
         - docker-compose
         - feh
+        - software-properties-common
+        - stow
   tasks:
 
     - name: Install base packages
