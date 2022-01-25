@@ -20,7 +20,6 @@
         - docker
         - docker-compose
         - feh
-        - st
   tasks:
 
     - name: Install base packages
