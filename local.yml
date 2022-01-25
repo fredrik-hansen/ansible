@@ -59,7 +59,7 @@
           command: "chdir=~{{ username }}/Machfiles stow zsh"
         - name: Global zprofile
           copy:
-            src: file/zprofile
+            src: files/zprofile
             dest: /etc/zsh/zprofile
             owner: root
             group: root
