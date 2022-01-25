@@ -57,7 +57,7 @@
             repo: "https://github.com/fredrik-hansen/machfiles.git"
             dest: "~{{ username }}/Machfiles"
         - name: Setup zsh 
-          shell: cd "~/Machfiles"
+          shell: "cd ~/Machfiles"
         - name: Set
           shell: "stow zsh"
 
