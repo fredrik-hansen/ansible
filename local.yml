@@ -58,5 +58,12 @@
             dest: "~{{ username }}/Machfiles"
         - name: Setup zsh 
           command: "chdir=~{{ username }}/Machfiles stow zsh"
+        - name: Global zprofile
+          copy:
+            src: file/zprofile
+            dest: /etc/zsh/zprofile
+            owner: root
+            group: root
+            mode: 0640
 
 
