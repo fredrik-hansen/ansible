@@ -48,7 +48,7 @@
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
 
-    - name: Setup zsh and customize it for the user
+    - name: Setup zsh from repo
       become: yes
       become_user: "{{ username }}"
       block:
@@ -56,4 +56,7 @@
           git:
             repo: "https://github.com/fredrik-hansen/machfiles.git"
             dest: "~{{ username }}/Machfiles"
-                
+        - name: Setup zsh 
+          shell: cd "~{{ username }}/Machfiles && stow zsh"
+
+
