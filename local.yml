@@ -4,6 +4,8 @@
   become: true
   
   vars:
+    username: pki
+    ansible_user: velociraptor
     base_pkgs:
         - htop
         - neovim
@@ -17,7 +19,7 @@
         - colorize
         - docker
         - docker-compose
-
+        - feh
 
   tasks:
 
@@ -33,8 +35,8 @@
 
     - name: set up sudo for ansible user
       copy:
-        src: files/sudoer_velociraptor
-        dest: /etc/sudoers.d/velociraptor
+        src: files/sudoer_{{ ansible_user }}
+        dest: /etc/sudoers.d/{{ ansible_user }}
         owner: root
         group: root
         mode: 0440
@@ -42,6 +44,16 @@
     - name: add ansible-pull cron job
       cron:
         name: ansible auto-provision
-        user: velociraptor
+        user: {{ ansible_user }}
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
+
+    - name: Setup zsh and ohmyzsh for the user
+      become: yes
+      become_user: "{{ username }}"
+      block:
+        - name: Clone ohmyzsh repo
+          git:
+            repo: "https://github.com/ohmyzsh/ohmyzsh.git"
+            dest: "~{{ username }}/.oh-my-zsh"
+
