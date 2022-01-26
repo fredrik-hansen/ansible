@@ -8,7 +8,6 @@
     ansible_user: velociraptor
     base_pkgs:
         - htop
-        - neovim
         - net-tools
         - zsh
         - tmux
@@ -93,4 +92,9 @@
     - name: add user to docker group
       become: yes
       command: "usermod -aG docker {{ username }}"
+
+    - name: Add neovim repository into sources list
+      ansible.builtin.apt_repository:
+        repo: ppa:neovim-ppa/stable
+        state: present
 
