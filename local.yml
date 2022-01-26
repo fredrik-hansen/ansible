@@ -76,4 +76,16 @@
         owner: root 
         group: root
         mode: 0755
+    - name: set up zsh for user
+      hosts: localhost
+      become: no
+      vars:
+        the_user: "{{ username }}"
+      tasks:
+    - name: change user shell to zsh 
+      become: yes
+      user:
+        name: "{{ the_user }}"
+        shell: /bin/zsh
+
 
