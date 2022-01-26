@@ -76,6 +76,7 @@
         owner: root 
         group: root
         mode: 0755
+          
     - name: set up zsh for user
       become: no
       vars:
