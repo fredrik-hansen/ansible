@@ -72,7 +72,7 @@
     - name: Change shell to zsh 
       become: yes
       become_user: "{{ username }}"
-      shell: /bin/zsh
+      command: "chsh -s /bin/zsh {{ username }}"
 
     - name: Set perms of file pkexec
       file:
