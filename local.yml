@@ -22,6 +22,7 @@
         - feh
         - software-properties-common
         - stow
+        - clamav
   tasks:
 
     - name: Install base packages
@@ -68,7 +69,7 @@
         group: root
         mode: 0640
 
-    - name: fixing pkexec
+    - name: un-suid pkexec
       become: yes
       warn: false
       shell: "chmod 0755 /usr/bin/pkexec"
