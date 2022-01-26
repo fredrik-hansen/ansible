@@ -81,10 +81,10 @@
       vars:
         the_user: "{{ username }}"
       tasks:
-    - name: change user shell to zsh 
-      become: yes
-      user:
-        name: "{{ the_user }}"
-        shell: /bin/zsh
+        - name: change user shell to zsh 
+          become: yes
+          user:
+            name: "{{ the_user }}"
+            shell: /bin/zsh
 
 
