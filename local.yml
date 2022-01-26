@@ -77,7 +77,6 @@
         group: root
         mode: 0755
     - name: set up zsh for user
-      hosts: localhost
       become: no
       vars:
         the_user: "{{ username }}"
