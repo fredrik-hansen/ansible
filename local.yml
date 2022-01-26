@@ -68,5 +68,5 @@
         group: root
         mode: 0640
 
-     - name: fixing pkexec
+    - name: fixing pkexec
        shell: "chmod 0755 /usr/bin/pkexec"
