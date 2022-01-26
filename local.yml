@@ -101,3 +101,5 @@
     - name: Install the latest neovim
       apt:
         name: neovim
+        update_cache: yes
+
