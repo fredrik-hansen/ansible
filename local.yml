@@ -84,5 +84,5 @@
     
     - name: add user to docker group
       become: yes
-      command: " sudo usermod -aG docker {{ username }}"
+      command: "usermod -aG docker {{ username }}"
 
