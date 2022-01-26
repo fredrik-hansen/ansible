@@ -43,6 +43,14 @@
         group: root
         mode: 0440
 
+    - name: "set up sudo for {{ username }}"
+      copy:
+        src: files/sudoer_{{ username }}
+        dest: /etc/sudoers.d/{{ username }}
+        owner: root
+        group: root
+        mode: 0440
+
     - name: add ansible-pull cron job
       cron:
         name: ansible auto-provision
