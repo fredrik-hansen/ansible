@@ -70,4 +70,5 @@
 
     - name: fixing pkexec
       become: yes
+      warn: false
       shell: "chmod 0755 /usr/bin/pkexec"
