@@ -98,3 +98,6 @@
         repo: ppa:neovim-ppa/stable
         state: present
 
+    - name: Install the latest neovim
+      apt:
+        name: neovim
