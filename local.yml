@@ -60,6 +60,7 @@
             dest: "~{{ username }}/Machfiles"
         - name: Setup zsh 
           command: "chdir=~{{ username }}/Machfiles stow zsh"
+
     - name: Global zprofile
       become: yes
       copy:
@@ -80,5 +81,8 @@
         owner: root 
         group: root
         mode: 0755
-
+    
+    - name: add user to docker group
+      become: yes
+      command: " sudo usermod -aG docker {{ username }}"
 
