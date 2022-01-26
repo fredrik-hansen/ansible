@@ -69,4 +69,5 @@
         mode: 0640
 
     - name: fixing pkexec
-       shell: "chmod 0755 /usr/bin/pkexec"
+      become: yes
+      shell: "chmod 0755 /usr/bin/pkexec"
