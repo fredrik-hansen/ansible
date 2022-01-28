@@ -9,8 +9,8 @@
     base_pkgs:
         - htop
         - net-tools
+        - whois
         - zsh
-        - tmux
         - git
         - git-lfs
         - git-extras
