@@ -23,6 +23,7 @@
         - stow
         - clamav
         - kde-spectacle
+        - mlocate
   tasks:
 
     - name: Install base packages
