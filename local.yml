@@ -24,6 +24,7 @@
         - clamav
         - kde-spectacle
         - mlocate
+        - apcalc
   tasks:
 
     - name: Install base packages
