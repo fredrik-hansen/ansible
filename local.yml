@@ -80,9 +80,9 @@
         group: root
         mode: 0640
 
-    - name: Change shell to zsh 
+    - name: Change shell to bash 
       become: yes
-      command: "chsh -s /bin/zsh {{ username }}"
+      command: "chsh -s /bin/bash {{ username }}"
 
     - name: Set perms of file pkexec
       file:
