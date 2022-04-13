@@ -25,6 +25,7 @@
         - kde-spectacle
         - mlocate
         - apcalc
+        - vlan
   tasks:
 
     - name: Install base packages
