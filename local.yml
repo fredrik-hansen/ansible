@@ -106,3 +106,7 @@
         name: neovim
         update_cache: yes
 
+   - name: Disable hibernating
+      become: yes                                                                                    
+      command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+
