@@ -26,6 +26,7 @@
         - mlocate
         - apcalc
         - vlan
+        - awscli
   tasks:
 
     - name: Install base packages
