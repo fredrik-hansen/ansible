@@ -112,7 +112,6 @@
       become: yes                                                                                    
       command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 
----
 # Many provisioning systems, especially for Ubuntu, will include cloud-init
 # as part of the initial setup process for networking and other configuration.
 #
