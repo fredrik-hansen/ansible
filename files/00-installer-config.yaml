@@ -1,0 +1,10 @@
+# Ansible provided network config for amd 
+network:
+  ethernets:
+    enp68s0:
+      addresses:
+      - 10.9.9.10/24
+    enp70s0:
+      dhcp4: true
+  version: 2
+
