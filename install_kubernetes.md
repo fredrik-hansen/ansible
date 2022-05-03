@@ -1,8 +1,11 @@
 # Install Kubernetes and Kubeflow on a GPU Host with NVIDIA DeepOps
 
- we go through the installation process of Kubeflow, an open source machine learning platform that takes advantage of Kubernetes capabilities to deliver end-to-end workflow to data scientists, ML engineers, and DevOps professionals. 
- we will use the DeepOps installer from NVIDIA which simplifies the installation process.
-  Based on AMD Ryzen Threadripper 3990X CPU with 64 Cores, NVIDIA GeForce RTX 3090 GPU with 24GB and 10496 CUDA Cores, 128GB RAM, and 3TB of NVMe storage
+
+We go through the installation process of Kubeflow, an open source machine learning platform that takes advantage of Kubernetes capabilities to deliver end-to-end workflow to data scientists, ML engineers, and DevOps professionals. 
+
+We will use the DeepOps installer from NVIDIA which simplifies the installation process.
+ 
+Based on AMD Ryzen Threadripper 3960X CPU with 48 Cores, NVIDIA GeForce RTX 3090 GPU with 24GB and 10496 CUDA Cores, 128GB RAM, and 3TB of NVMe storage
   
 ## Preparing the Host GPU Machine for DeepOps
   
