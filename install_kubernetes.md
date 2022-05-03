@@ -23,6 +23,7 @@ Start by cloning the DeepOps GitHub repository on the bootstrap/provisioning mac
 Switch to the most stable version of the installer.
 
 ```cd deepops```
+
 ```git checkout tags/20.12```
 	
 
@@ -62,9 +63,11 @@ It may take anywhere from 10 to 20 minutes depending on your Internet connection
 
 Copy the configuration file and kubectl to access the cluster.
 
-```cp config/artifacts/kubectl /usr/local/bin/
-mkdir ~/.kube
-cp config/artifacts/admin.conf ~/.kube/config```
+```cp config/artifacts/kubectl /usr/local/bin/```
+
+```mkdir ~/.kube```
+
+```cp config/artifacts/admin.conf ~/.kube/config```
 
 	
 
@@ -73,8 +76,9 @@ We are now ready to access the single-node Kubernetes cluster.
 ```kubectl get nodes```
 
 ### Test if Kubernetes is able to access the GPU.
-```export CLUSTER_VERIFY_EXPECTED_PODS=1 
-./scripts/k8s/verify_gpu.sh ```
+```export CLUSTER_VERIFY_EXPECTED_PODS=1```
+
+```./scripts/k8s/verify_gpu.sh ```
 
 	
 ```kubectl run gpu-test --rm -t -i --restart=Never --image=nvcr.io/nvidia/cuda:10.1-base-ubuntu18.04 --limits=nvidia.com/gpu=1 nvidia-smi```
