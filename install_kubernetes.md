@@ -22,8 +22,8 @@ Start by cloning the DeepOps GitHub repository on the bootstrap/provisioning mac
 
 Switch to the most stable version of the installer.
 
-```cd deepops
-git checkout tags/20.12```
+```cd deepops```
+```git checkout tags/20.12```
 	
 
 Install the prerequisites and configure Ansible.
