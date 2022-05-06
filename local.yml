@@ -62,26 +62,6 @@
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
 
-    - name: Setup zsh from repo
-      become: yes
-      become_user: "{{ username }}"
-      block:
-        - name: Clone machfiles repo
-          git:
-            repo: "https://github.com/fredrik-hansen/machfiles.git"
-            dest: "~{{ username }}/Machfiles"
-        - name: Setup zsh 
-          command: "chdir=~{{ username }}/Machfiles stow zsh"
-
-    - name: Global zprofile
-      become: yes
-      copy:
-        src: files/zprofile
-        dest: /etc/zsh/zprofile
-        owner: root
-        group: root
-        mode: 0640
-
     - name: Change shell to bash 
       become: yes
       command: "chsh -s /bin/bash {{ username }}"
@@ -144,3 +124,23 @@
       - "cloud-init"
       - "cloud-config"
       - "cloud-final"
+
+    - name: Setup zsh from repo
+      become: yes
+      become_user: "{{ username }}"
+      block:
+        - name: Clone machfiles repo
+          git:
+            repo: "https://github.com/fredrik-hansen/machfiles.git"
+            dest: "~{{ username }}/Machfiles"
+        - name: Setup zsh 
+          command: "chdir=~{{ username }}/Machfiles stow zsh"
+
+    - name: Global zprofile
+      become: yes
+      copy:
+        src: files/zprofile
+        dest: /etc/zsh/zprofile
+        owner: root
+        group: root
+        mode: 0640
