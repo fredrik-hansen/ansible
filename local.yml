@@ -22,7 +22,7 @@
         - software-properties-common
         - stow
         - clamav
-        - kde-spectacle
+#        - kde-spectacle
         - mlocate
         - apcalc
         - vlan
@@ -98,10 +98,11 @@
       become: yes
       command: "usermod -aG docker {{ username }}"
 
-#    - name: Add neovim repository into sources list
-#      ansible.builtin.apt_repository:
-#        repo: ppa:neovim-ppa/stable
-#        state: present
+    - name: Add neovim repository into sources list
+      ansible.builtin.apt_repository:
+        repo: ppa:neovim-ppa/stable
+        state: present
+
 
     - name: Install the latest neovim
       apt:
