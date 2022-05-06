@@ -97,7 +97,6 @@
 # as part of the initial setup process for networking and other configuration.
 #
 
-
     - name: check if /etc/cloud is present
       when: deepops_disable_cloud_init
       stat:
