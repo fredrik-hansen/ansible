@@ -22,6 +22,10 @@
         - software-properties-common
         - stow
         - clamav
+<<<<<<< HEAD
+=======
+#        - kde-spectacle
+>>>>>>> 882354ad2008f828e99239fe2744f9d46952c4da
         - mlocate
         - apcalc
         - vlan
@@ -75,26 +79,6 @@
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
 
-    - name: Setup zsh from repo
-      become: yes
-      become_user: "{{ username }}"
-      block:
-        - name: Clone machfiles repo
-          git:
-            repo: "https://github.com/fredrik-hansen/machfiles.git"
-            dest: "~{{ username }}/Machfiles"
-        - name: Setup zsh 
-          command: "chdir=~{{ username }}/Machfiles stow zsh"
-
-    - name: Global zprofile
-      become: yes
-      copy:
-        src: files/zprofile
-        dest: /etc/zsh/zprofile
-        owner: root
-        group: root
-        mode: 0640
-
     - name: Change shell to bash 
       become: yes
       command: "chsh -s /bin/bash {{ username }}"
@@ -111,10 +95,11 @@
       become: yes
       command: "usermod -aG docker {{ username }}"
 
-#    - name: Add neovim repository into sources list
-#      ansible.builtin.apt_repository:
-#        repo: ppa:neovim-ppa/stable
-#        state: present
+    - name: Add neovim repository into sources list
+      ansible.builtin.apt_repository:
+        repo: ppa:neovim-ppa/stable
+        state: present
+
 
     - name: Install the latest neovim
       apt:
@@ -128,7 +113,6 @@
 # Many provisioning systems, especially for Ubuntu, will include cloud-init
 # as part of the initial setup process for networking and other configuration.
 #
-
 
     - name: check if /etc/cloud is present
       when: deepops_disable_cloud_init
@@ -156,3 +140,23 @@
       - "cloud-init"
       - "cloud-config"
       - "cloud-final"
+
+    - name: Setup zsh from repo
+      become: yes
+      become_user: "{{ username }}"
+      block:
+        - name: Clone machfiles repo
+          git:
+            repo: "https://github.com/fredrik-hansen/machfiles.git"
+            dest: "~{{ username }}/Machfiles"
+        - name: Setup zsh 
+          command: "chdir=~{{ username }}/Machfiles stow zsh"
+
+    - name: Global zprofile
+      become: yes
+      copy:
+        src: files/zprofile
+        dest: /etc/zsh/zprofile
+        owner: root
+        group: root
+        mode: 0640
