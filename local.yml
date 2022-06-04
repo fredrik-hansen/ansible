@@ -169,3 +169,40 @@
         owner: root
         group: root
         mode: 0640
+
+
+    - name: Download Miniconda
+      get_url:
+        url: https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+        dest: /tmp/install-miniconda.sh
+        checksum: sha256:78f39f9bae971ec1ae7969f0516017f2413f17796670f7040725dd83fcff5689
+        mode: 0550
+    - name: Create conda folder
+      become: True
+      file:
+        path: /opt/miniconda3
+        state: directory
+        owner: ubuntu
+        mode: 755
+        recurse: yes
+    - name: Run the installer
+      shell: /tmp/install-miniconda.sh -b -u -p /opt/miniconda3
+    - name: Remove the installer
+      file:
+        state: absent
+        path: /tmp/install-miniconda.sh
+    - name: Add miniconda bin to path
+      become: True
+      shell: echo 'export PATH=/opt/miniconda3/bin:$PATH' >> /etc/profile
+    - name: conda - read permission for all
+      become: True
+      file:
+        path: /opt/miniconda3
+        mode: +r
+        recurse: yes
+    - name: conda - execution permission for all
+      become: True
+      file:
+        path: /opt/miniconda3/bin
+        mode: +x
+        recurse: yes
