@@ -91,10 +91,16 @@
       become: yes
       command: "usermod -aG docker {{ username }}"
 
-    - name: Add neovim repository into sources list
-      ansible.builtin.apt_repository:
-        repo: ppa:neovim-ppa/stable
-        state: present
+        #    - name: Add neovim repository into sources list
+        #      ansible.builtin.apt_repository:
+        #       repo: ppa:neovim-ppa/stable
+        #        state: present
+    - name: add nvim apt repository
+      apt_repository: 
+        repo: 'deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu focal main' 
+        state: present 
+        filename: neovim-ppa-ubuntu-stable-focal 
+        update_cache: yes
 
 
     - name: Install the latest neovim
