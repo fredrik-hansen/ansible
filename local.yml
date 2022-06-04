@@ -148,10 +148,12 @@
       become_user: "{{ username }}"
       block:
         - name: Clone machfiles repo
+          ignore_errors: yes
           git:
             repo: "https://github.com/fredrik-hansen/machfiles.git"
             dest: "~{{ username }}/Machfiles"
         - name: Setup zsh 
+          ignore_errors: yes
           command: "chdir=~{{ username }}/Machfiles stow zsh"
 
     - name: Global zprofile
