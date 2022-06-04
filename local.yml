@@ -182,7 +182,7 @@
       file:
         path: /opt/miniconda3
         state: directory
-        owner: ubuntu
+        owner: pki 
         mode: 755
         recurse: yes
     - name: Run the installer
