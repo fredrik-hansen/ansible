@@ -22,16 +22,29 @@
         - software-properties-common
         - stow
         - clamav
-        - kde-spectacle
         - mlocate
         - apcalc
         - vlan
+    desktop_pkgs:
+        - kde-spectacle
+    developer_pkgs:
         - awscli
+        
   tasks:
 
     - name: Install base packages
       apt:
         name: "{{ base_pkgs }}"
+        state: present
+        update_cache: yes
+    - name: Install desktop packages
+      apt:
+        name: "{{ desktop_pkgs }}"
+        state: present
+        update_cache: yes
+    - name: Install developer packages
+      apt:
+        name: "{{ developer_pkgs }}"
         state: present
         update_cache: yes
     - name: add ansible user
