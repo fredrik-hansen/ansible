@@ -173,11 +173,13 @@
 
     - name: Download Miniconda
       get_url:
-        url: https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+      ignore_errors: yes
+      url: https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
         dest: /tmp/install-miniconda.sh
         checksum: sha256:78f39f9bae971ec1ae7969f0516017f2413f17796670f7040725dd83fcff5689
         mode: 0550
     - name: Create conda folder
+      ignore_errors: yes
       become: True
       file:
         path: /opt/miniconda3
@@ -187,20 +189,25 @@
         recurse: yes
     - name: Run the installer
       shell: /tmp/install-miniconda.sh -b -u -p /opt/miniconda3
+      ignore_errors: yes
     - name: Remove the installer
+      ignore_errors: yes
       file:
         state: absent
         path: /tmp/install-miniconda.sh
     - name: Add miniconda bin to path
       become: True
+      ignore_errors: yes
       shell: echo 'export PATH=/opt/miniconda3/bin:$PATH' >> /etc/profile
     - name: conda - read permission for all
       become: True
+      ignore_errors: yes
       file:
         path: /opt/miniconda3
         mode: +r
         recurse: yes
     - name: conda - execution permission for all
+      ignore_errors: yes
       become: True
       file:
         path: /opt/miniconda3/bin
