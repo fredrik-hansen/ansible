@@ -113,6 +113,10 @@
       become: yes                                                                                    
       command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 
+    - name: Set timezone to Europe/Madrid
+      become: yes
+      command: "timedatectl set-timezone Europe/Madrid"
+
 # Many provisioning systems, especially for Ubuntu, will include cloud-init
 # as part of the initial setup process for networking and other configuration.
 #
