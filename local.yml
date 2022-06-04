@@ -119,7 +119,7 @@
     - name: check if /etc/cloud is present
       when: deepops_disable_cloud_init
       stat:
-        path: "/etc/cloud"
+      path: "/etc/cloud"
       register: etc_cloud
 
     - name: disable generator for setting cloud-init target
