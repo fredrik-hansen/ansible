@@ -27,6 +27,7 @@
         - vlan
     desktop_pkgs:
         - kde-spectacle
+        - cmatrix
     developer_pkgs:
         - awscli
         
