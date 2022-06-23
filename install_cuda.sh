@@ -7,7 +7,9 @@ sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-key del 7fa2af80
 
 sudo apt update
+
 sudo apt install cuda
+sudo apt install nvidia-cuda-toolkit
 echo 'export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}' >> ~/.bashrc
 
 nvcc --version
