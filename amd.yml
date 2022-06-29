@@ -1,0 +1,145 @@
+---
+- hosts: amd 
+  connection: local
+  become: true
+  
+  vars:
+    username: pki
+    ansible_user: velociraptor
+    base_pkgs:
+        - htop
+        - net-tools
+        - whois
+        - zsh
+        - git
+        - git-lfs
+        - git-extras
+        - ansible
+        - colorize
+        - docker
+        - docker-compose
+        - feh
+        - software-properties-common
+        - stow
+        - clamav
+        - kde-spectacle
+        - mlocate
+        - apcalc
+        - vlan
+        - awscli
+  tasks:
+
+    - name: Install base packages
+      apt:
+        name: "{{ base_pkgs }}"
+        state: present
+        update_cache: yes
+    - name: add ansible user
+      user:
+        name: velociraptor
+        system: yes
+
+    - name: set up sudo for ansible user
+      copy:
+        src: files/sudoer_{{ ansible_user }}
+        dest: /etc/sudoers.d/{{ ansible_user }}
+        owner: root
+        group: root
+        mode: 0440
+
+    - name: "set up sudo for {{ username }}"
+      copy:
+        src: files/sudoer_{{ username }}
+        dest: /etc/sudoers.d/{{ username }}
+        owner: root
+        group: root
+        mode: 0440
+
+    - name: add ansible-pull cron job
+      cron:
+        name: ansible auto-provision
+        user: "{{ ansible_user }}"
+        minute: "*/10"
+        job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
+
+    - name: Setup zsh from repo
+      become: yes
+      become_user: "{{ username }}"
+      block:
+        - name: Clone machfiles repo
+          git:
+            repo: "https://github.com/fredrik-hansen/machfiles.git"
+            dest: "~{{ username }}/Machfiles"
+        - name: Setup zsh 
+          command: "chdir=~{{ username }}/Machfiles stow zsh"
+
+    - name: Global zprofile
+      become: yes
+      copy:
+        src: files/zprofile
+        dest: /etc/zsh/zprofile
+        owner: root
+        group: root
+        mode: 0640
+
+    - name: Change shell to bash 
+      become: yes
+      command: "chsh -s /bin/bash {{ username }}"
+
+    - name: Set perms of file pkexec
+      file:
+        path: /usr/bin/pkexec
+        state: file
+        owner: root 
+        group: root
+        mode: 0755
+    
+    - name: add user to docker group
+      become: yes
+      command: "usermod -aG docker {{ username }}"
+
+#    - name: Add neovim repository into sources list
+#      ansible.builtin.apt_repository:
+#        repo: ppa:neovim-ppa/stable
+#        state: present
+
+    - name: Install the latest neovim
+      apt:
+        name: neovim
+        update_cache: yes
+
+    - name: Disable hibernating
+      become: yes                                                                                    
+      command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+
+# Many provisioning systems, especially for Ubuntu, will include cloud-init
+# as part of the initial setup process for networking and other configuration.
+#
+
+
+    - name: check if /etc/cloud is present
+      when: deepops_disable_cloud_init
+      stat:
+        path: "/etc/cloud"
+      register: etc_cloud
+
+    - name: disable generator for setting cloud-init target
+      when: deepops_disable_cloud_init and etc_cloud.stat.exists
+      file:
+        path: "/etc/cloud/cloud-init.disabled"
+        owner: "root"
+        group: "root"
+        mode: "0644"
+        state: "touch"
+
+    - name: disable all systemd services
+      when: deepops_disable_cloud_init
+      ignore_errors: yes
+      service:
+        name: "{{ item }}"
+        state: stopped
+        enabled: no
+      with_items:
+      - "cloud-init"
+      - "cloud-config"
+      - "cloud-final"

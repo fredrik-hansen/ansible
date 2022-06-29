@@ -25,6 +25,7 @@
         - mlocate
         - apcalc
         - vlan
+        - linux-generic
     desktop_pkgs:
         - kde-spectacle
         - cmatrix

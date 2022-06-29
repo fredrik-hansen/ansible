@@ -4,7 +4,9 @@ network:
     enp68s0:
       addresses:
       - 10.9.9.10/24
+      optional: true
     enp70s0:
       dhcp4: true
+      optional: true
   version: 2
 
