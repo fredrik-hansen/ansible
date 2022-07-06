@@ -26,6 +26,7 @@
         - apcalc
         - vlan
         - linux-generic
+        - portaudio19-dev
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
