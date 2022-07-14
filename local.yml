@@ -216,7 +216,7 @@
         path: /opt/miniconda3/bin
         mode: +x
         recurse: yes
-   - name: Global alias
+    - name: Global alias
       become: yes
       copy:
         src: files/aliases
