@@ -173,7 +173,15 @@
         group: root
         mode: 0640
 
-
+    - name: Global alias
+      become: yes
+      copy:
+        src: files/aliases
+        dest: "~{{ username }}/.bash_aliases"
+        owner: "~{{ username }}"
+        group: "~{{ username }}"
+        mode: 0660
+    
     - name: Download Miniconda
       ansible.builtin.get_url:
       ignore_errors: yes
@@ -216,11 +224,3 @@
         path: /opt/miniconda3/bin
         mode: +x
         recurse: yes
-    - name: Global alias
-      become: yes
-      copy:
-        src: files/aliases
-        dest: "~{{ username }}/.bash_aliases"
-        owner: "~{{ username }}"
-        group: "~{{ username }}"
-        mode: 0660
