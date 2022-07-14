@@ -221,6 +221,6 @@
       copy:
         src: files/aliases
         dest: "~{{ username }}/.bash_aliases"
-        owner: root
-        group: root
+        owner: "~{{ username }}"
+        group: "~{{ username }}"
         mode: 0660
