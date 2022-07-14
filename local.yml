@@ -104,13 +104,13 @@
         repo: 'deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu focal main' 
         state: present 
         filename: neovim-ppa-ubuntu-stable-focal 
-        update_cache: yes
+        update_cache: no 
 
 
     - name: Install the latest neovim
       apt:
         name: neovim
-        update_cache: yes
+        update_cache: no
 
     - name: Disable hibernating
       become: yes                                                                                    
