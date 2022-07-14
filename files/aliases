@@ -1,3 +1,5 @@
+#2022-07-14
+#Fred
 alias all='python3 ~/mrun.py'
 alias describe='kubectl describe'
 alias egrep='egrep --color=auto'
