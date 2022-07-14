@@ -45,12 +45,12 @@
       apt:
         name: "{{ desktop_pkgs }}"
         state: present
-        update_cache: yes
+        update_cache: no 
     - name: Install developer packages
       apt:
         name: "{{ developer_pkgs }}"
         state: present
-        update_cache: yes
+        update_cache: no
     - name: add ansible user
       user:
         name: velociraptor
