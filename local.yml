@@ -188,7 +188,7 @@
         path: /opt/miniconda3
         state: directory
         owner: pki 
-        mode: 755
+        mode: 0755
         recurse: yes
     - name: Run the installer
       shell: /tmp/install-miniconda.sh -b -u -p /opt/miniconda3
@@ -216,3 +216,11 @@
         path: /opt/miniconda3/bin
         mode: +x
         recurse: yes
+   - name: Global alias
+      become: yes
+      copy:
+        src: files/aliases
+        dest: "~{{ username }}/.bash_aliases"
+        owner: root
+        group: root
+        mode: 0660
