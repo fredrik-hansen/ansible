@@ -178,9 +178,9 @@
       get_url:
       ignore_errors: yes
       url: https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
-        dest: /tmp/install-miniconda.sh
-        checksum: sha256:78f39f9bae971ec1ae7969f0516017f2413f17796670f7040725dd83fcff5689
-        mode: 0550
+      dest: /tmp/install-miniconda.sh
+      checksum: sha256:78f39f9bae971ec1ae7969f0516017f2413f17796670f7040725dd83fcff5689
+      mode: 0550
     - name: Create conda folder
       ignore_errors: yes
       become: True
