@@ -183,6 +183,7 @@
         mode: 0660
     - name: copy/update multirun if needed
       become: no 
+      ignore_errors: yes
       copy:
         src: files/mrun.py
         dest: "~{{ username }}/shared/mrun.py"
