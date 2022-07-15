@@ -178,15 +178,15 @@
       copy:
         src: files/aliases
         dest: "~{{ username }}/.bash_aliases"
-        owner: "~{{ username }}"
-        group: "~{{ username }}"
+        owner: "{{ username }}"
+        group: "{{ username }}"
         mode: 0660
     - name: copy/update multirun if needed
       become: yes
       copy:
         src: files/mrun.py
         dest: "~{{ username }}/shared/mrun.py"
-        owner: "~{{ username }}"
-        group: "~{{ username }}"
+        owner: "{{ username }}"
+        group: "{{ username }}"
         mode: 0660
 
