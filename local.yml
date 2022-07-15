@@ -182,7 +182,7 @@
         group: "{{ username }}"
         mode: 0660
     - name: copy/update multirun if needed
-      become: yes
+      become: no 
       copy:
         src: files/mrun.py
         dest: "~{{ username }}/shared/mrun.py"
