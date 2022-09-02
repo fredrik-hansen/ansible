@@ -1,8 +1,4 @@
 ---
-- hosts: amd
-  connection: local
-  become: true
-  
  
 - hosts: localhost
   connection: local
