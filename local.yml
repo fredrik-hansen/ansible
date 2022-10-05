@@ -28,6 +28,7 @@
         - linux-generic
         - portaudio19-dev
         - virt-manager
+        - nmap
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
