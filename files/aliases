@@ -1,7 +1,7 @@
 #2022-07-14
 #Fred
-alias kron='keylight --host 10.1.15.146 --on --brightness 3'
-alias klon='keylight --host 10.1.15.145 --on --brightness 3'
+alias kron='keylight --host 10.1.15.146 --on --brightness 70'
+alias klon='keylight --host 10.1.15.145 --on --brightness 70'
 alias kroff='keylight --host 10.1.15.146 --off'
 alias kloff='keylight --host 10.1.15.145 --off'
 alias all='python3 ~/shared/mrun.py'
