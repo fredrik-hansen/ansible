@@ -1,4 +1,4 @@
-#2022-07-14
+#2022-11-11
 #Fred
 alias kron='keylight --host 10.1.15.146 --on --brightness 70'
 alias klon='keylight --host 10.1.15.145 --on --brightness 70'
