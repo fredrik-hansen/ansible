@@ -1,8 +1,8 @@
 #2022-11-11
 #Fred
-alias kron='keylight --host 10.1.15.146 --on --brightness 70'
+alias kron='keylight --host 10.2.10.146 --on --brightness 70'
 alias klon='keylight --host 10.1.15.145 --on --brightness 70'
-alias kroff='keylight --host 10.1.15.146 --off'
+alias kroff='keylight --host 10.2.10.146 --off'
 alias kloff='keylight --host 10.1.15.145 --off'
 alias all='python3 ~/shared/mrun.py'
 alias describe='kubectl describe'
