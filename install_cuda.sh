@@ -28,6 +28,10 @@ sudo apt-mark hold nvidia-cuda-toolkit
 sudo apt-mark hold nvidia-container-toolkit 
 sudo apt-mark hold nvidia-container-runtime
 
-### Install GPG keys
-#wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
-#sudo dpkg -i cuda-keyring_1.0-1_all.deb
+### Install docker-compose
+# curl + grep
+VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*\d')
+
+DESTINATION=/usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-$(uname -s)-$(uname -m) -o $DESTINATION
+sudo chmod 755 $DESTINATION
