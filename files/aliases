@@ -1,10 +1,10 @@
 #2022-11-11
 #Fred
 alias kron='keylight --host 10.2.10.146 --on --brightness 70'
-alias klon='keylight --host 10.1.15.145 --on --brightness 70'
+alias klon='keylight --host 10.2.10.145 --on --brightness 70'
 alias kroff='keylight --host 10.2.10.146 --off'
-alias kloff='keylight --host 10.1.15.145 --off'
-alias all='python3 ~/shared/mrun.py'
+alias kloff='keylight --host 10.2.10.145 --off'
+alias §='python3 ~/gpt/client.py'
 alias describe='kubectl describe'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
