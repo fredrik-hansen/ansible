@@ -8,6 +8,7 @@
     username: pki
     ansible_user: velociraptor
     base_pkgs:
+        - btop
         - tldr
         - htop
         - net-tools
