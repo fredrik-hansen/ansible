@@ -195,6 +195,24 @@
         group: "{{ username }}"
         mode: 0600
 
+    - name: Install bash_prompt
+      become: yes
+      copy:
+        src: files/.bash_prompt
+        dest: "~{{ username }}/.bash_prompt"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+        mode: 0600
+
+
+    - name: Setup git config
+      become: yes
+      copy:
+        src: files/.gitconfig
+        dest: "~{{ username }}/"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+        mode: 0600
           #    - name: copy/update multirun if needed
           #      become: no 
           #      ignore_errors: yes
