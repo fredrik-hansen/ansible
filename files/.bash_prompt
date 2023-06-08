@@ -130,7 +130,7 @@ PS1+="\[${white}\] in ${green}\w"; # working directory
 PS1+="\$(prompt_git \"${white} git:${violet}\")"; # Git repository details
 PS1+="\$(prompt_node \"${white} node:${cyan}\")"; # Node.js version
 PS1+="\$(prompt_k8s \"${white} k8s:${purple}\")"; # Kubernetes config
-#PS1+="\n";
+PS1+="\n";
 PS1+="\[${white}\] → \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
