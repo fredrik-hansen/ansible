@@ -4,7 +4,7 @@ import sys
 from pssh.clients import ParallelSSHClient
 
 #define the hosts we want to execute $sz_exec on
-hosts = ['amd', 'bigfoot','neocortex']
+hosts = ['bigfoot','neocortex']
 
 # exclude the file name from the list of arguments
 total_args = len(sys.argv)-1
