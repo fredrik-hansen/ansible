@@ -138,6 +138,8 @@ unset __conda_setup
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/pki/.mujoco/mujoco210/bin
+git config --global user.email "fredrik.hansen@eve.sx"
+git config --global user.name "Fredrik Hansen"
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
