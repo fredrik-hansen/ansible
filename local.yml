@@ -32,6 +32,7 @@
         - portaudio19-dev
         - virt-manager
         - nmap
+        - terminator
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
