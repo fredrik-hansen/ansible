@@ -33,6 +33,7 @@
         - virt-manager
         - nmap
         - terminator
+        - qutebrowser
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
