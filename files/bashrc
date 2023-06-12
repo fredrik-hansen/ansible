@@ -135,7 +135,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-if [ -f "/home/pki/.local/bin"]; then
+if [ -f "/home/pki/.local/bin" ]; then
    export PATH="/home/pki/.local/bin:$PATH"
 fi
 export LC_ALL=en_US.UTF-8
