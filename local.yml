@@ -32,8 +32,6 @@
         - virt-manager
         - nmap
         - terminator
-        - npm
-        - cargo
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
