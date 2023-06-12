@@ -33,7 +33,6 @@
         - nmap
         - terminator
         - npm
-        - node
         - cargo
     desktop_pkgs:
         - kde-spectacle
