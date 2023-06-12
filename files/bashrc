@@ -137,6 +137,7 @@ unset __conda_setup
 
 if [ -f "/home/pki/.local/bin"]; then
    export PATH="/home/pki/.local/bin:$PATH"
+fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/pki/.mujoco/mujoco210/bin
