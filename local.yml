@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.1
+# Version: 0.2
 - hosts: localhost
   connection: local
   become: true
@@ -87,7 +87,7 @@
 
     - name: Change shell to bash 
       become: yes
-      command: "chsh -s /bin/bash {{ username }}"
+      command: "chsh -s /usr/bin/bash {{ username }}"
 
     - name: Set perms of file pkexec
       file:
