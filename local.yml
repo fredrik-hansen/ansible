@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.4
+# Version: 0.5
 - hosts: localhost
   connection: local
   become: true
@@ -180,7 +180,7 @@
         group: root
         mode: 0640
 
-    - name: Global alias
+    - name: Local alias for {{ username }}
       become: yes
       copy:
         src: files/aliases
