@@ -187,6 +187,7 @@
         dest: "~{{ username }}/.bash_aliases"
         owner: "{{ username }}"
         group: "{{ username }}"
+        remote_src: yes
         mode: 0660
 
     - name: Install a common bashrc
