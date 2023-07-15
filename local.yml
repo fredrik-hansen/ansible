@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.2
+# Version: 0.3
 - hosts: localhost
   connection: local
   become: true
@@ -34,6 +34,7 @@
         - nmap
         - terminator
         - qutebrowser
+        - nvtop
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
