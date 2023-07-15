@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.6
+# Version: 0.7
 - hosts: localhost
   connection: local
   become: true
