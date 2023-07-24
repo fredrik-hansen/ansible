@@ -5,7 +5,7 @@ We go through the installation process of Kubeflow, an open source machine learn
 
 We will use the DeepOps installer from NVIDIA which simplifies the installation process.
  
-Based on AMD Ryzen Threadripper 3960X CPU with 48 Cores, NVIDIA GeForce RTX 3090 GPU with 24GB and 10496 CUDA Cores, 128GB RAM, and 3TB of NVMe storage
+Based on AMD Ryzen Threadripper 3960X CPU with 48 Cores, NVIDIA GeForce RTX 4090 GPU, 128GB RAM, and 3TB of NVMe storage
   
 ## Preparing the Host GPU Machine for DeepOps
   
@@ -24,7 +24,7 @@ Switch to the most stable version of the installer.
 
 ```cd deepops```
 
-```git checkout tags/20.12```
+```git checkout tags/22.04```
 	
 
 Install the prerequisites and configure Ansible.
@@ -36,7 +36,7 @@ Next, update the inventory file with the GPU host details.
 ```nvim config/inventory```
 	
 
-Under [all], add the hostname and the IP address. I am calling my host amd with an IP address 10.1.4.3
+Under [all], add the hostname and the IP address. 
 
 Add the same host under the [kube-master], [etcd], and [kube-node] sections.
 
@@ -45,6 +45,7 @@ If you have a multinode cluster, you can split them as control plane and worker 
 Note that Kubespray will rename the host(s) based on the inventory file. It’s not recommended to change the hostname after installing Kubernetes.
 
 Now, we are ready to kick off the installation.
+
 ###Installing Kubernetes with DeepOps
 
 Now that the host and the bootstrap machines are ready, let’s run the installation.
