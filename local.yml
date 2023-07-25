@@ -103,22 +103,6 @@
       become: yes
       command: "usermod -aG docker {{ username }}"
 
-        #    - name: Add neovim repository into sources list
-        #      ansible.builtin.apt_repository:
-        #       repo: ppa:neovim-ppa/stable
-        #        state: present
-    - name: add nvim apt repository
-      apt_repository: 
-        repo: 'deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu focal main' 
-        state: present 
-        filename: neovim-ppa-ubuntu-stable-focal 
-        update_cache: no 
-
-
-    - name: Install the latest neovim
-      apt:
-        name: neovim
-        update_cache: no
 
     - name: Disable hibernating
       become: yes                                                                                    
@@ -127,37 +111,6 @@
     - name: Set timezone to Europe/Madrid
       become: yes
       command: "timedatectl set-timezone Europe/Madrid"
-
-# Many provisioning systems, especially for Ubuntu, will include cloud-init
-# as part of the initial setup process for networking and other configuration.
-#
-
-    - name: check if /etc/cloud is present
-      #      when: deepops_disable_cloud_init.exists
-      stat:
-        path: "/etc/cloud"
-      register: etc_cloud
-
-    - name: disable generator for setting cloud-init target
-      when: etc_cloud.stat.exists
-      file:
-        path: "/etc/cloud/cloud-init.disabled"
-        owner: "root"
-        group: "root"
-        mode: "0644"
-        state: "touch"
-
-    - name: disable all systemd services
-      when: etc_cloud.stat.exists 
-      ignore_errors: yes
-      service:
-        name: "{{ item }}"
-        state: stopped
-        enabled: no
-      with_items:
-      - "cloud-init"
-      - "cloud-config"
-      - "cloud-final"
 
     - name: Setup zsh from repo
       become: yes
@@ -188,7 +141,6 @@
         dest: "~{{ username }}/.bash_aliases"
         owner: "{{ username }}"
         group: "{{ username }}"
-        remote_src: yes
         mode: 0660
 
     - name: Install a common bashrc
