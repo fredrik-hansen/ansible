@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.7
+# Version: 0.8
 - hosts: localhost
   connection: local
   become: true
@@ -35,6 +35,7 @@
         - terminator
         - qutebrowser
         - nvtop
+        - tmux
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
