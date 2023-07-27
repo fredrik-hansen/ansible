@@ -21,3 +21,4 @@ alias podsall='kubectl get pods -A -o custom-columns=NAMESPACE:.metadata.namespa
 alias svc='kubectl get svc'
 alias pvc='kubectl get pvc'
 alias top='btop'
+alias kclean='kubectl delete pods --field-selector status.phase!=Running --all-namespaces'
