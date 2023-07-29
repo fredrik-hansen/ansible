@@ -85,7 +85,7 @@
         name: ansible auto-provision
         user: "{{ ansible_user }}"
         minute: "*/10"
-        job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git 
+        job: ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git > /dev/null 2>&1
 
     - name: Change shell to bash 
       become: yes
