@@ -15,5 +15,4 @@ spec:
   dnsPolicy: "None"
   dnsConfig:
     nameservers:
-      - 10.2.1.1 # this is an example
-
+      - 10.96.0.10 # this is an example
