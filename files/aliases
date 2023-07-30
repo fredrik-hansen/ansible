@@ -1,4 +1,4 @@
-#2023-07-28
+#2023-07-30
 #Fred
 alias kron='keylight --host 10.2.10.146 --on --brightness 70'
 alias klon='keylight --host 10.2.10.145 --on --brightness 70'
@@ -8,6 +8,7 @@ alias §='python3 ~/code/gpt/client.py'
 alias draw='conda activate draw && cd ~/draw && ls'
 alias sdweb='conda activate sdweb && cd ~/code/stable-diffusion-webui && ls'
 alias describe='kubectl describe'
+alias c='cmatrix'
 alias d='kubectl describe'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
