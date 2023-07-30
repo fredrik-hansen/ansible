@@ -10,9 +10,8 @@ sudo killall kube-apiserver
 sudo rm -rf /var/lib/etcd/
 sudo rm -rf /etc/cni/net.d/
 # Set it up again
-sudo kubeadm init --pod-network-cidr=10.10.0.0/16
-
-
+sudo kubeadm init --pod-network-cidr=10.10.0.0/16  --kubernetes-version=1.25.12-00
+sudo apt install --reinstall kubeadm=1.25.12-00 kubelet=1.25.12-00 kubectl=1.25.12-00
 #If all up again in vanilla state, copy config
 
 mkdir -p $HOME/.kube
