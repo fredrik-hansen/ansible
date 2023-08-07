@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.0 - 
+# Version: 1.1 - 
 - hosts: localhost
   connection: local
   become: true
@@ -38,6 +38,10 @@
         - tmux
         - mpv
         - nemo
+        - blueman-manager
+        - brightnessctl
+        - iw
+        - iwgetid
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
