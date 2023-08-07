@@ -1,4 +1,4 @@
-#2023-07-30
+#2023-08-07
 #Fred
 alias kron='keylight --host 10.2.10.146 --on --brightness 70'
 alias klon='keylight --host 10.2.10.145 --on --brightness 70'
@@ -9,6 +9,7 @@ alias draw='conda activate draw && cd ~/draw && ls'
 alias sdweb='conda activate sdweb && cd ~/code/stable-diffusion-webui && ls'
 alias describe='kubectl describe'
 alias c='cmatrix'
+alias mpv='mpv --hwdec=vaapi --profile=gpu-hq'
 alias d='kubectl describe'
 alias du='du -sh *'
 alias egrep='egrep --color=auto'
