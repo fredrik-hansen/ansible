@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.1 - 
+# Version: 1.2 - 
 - hosts: localhost
   connection: local
   become: true
@@ -42,6 +42,8 @@
         - brightnessctl
         - iw
         - iwgetid
+        - pulseaudio
+        - pavucontrol
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
