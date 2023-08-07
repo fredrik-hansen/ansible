@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 0.9 - 
+# Version: 1.0 - 
 - hosts: localhost
   connection: local
   become: true
@@ -36,6 +36,8 @@
         - qutebrowser
         - nvtop
         - tmux
+        - mpv
+        - nemo
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
