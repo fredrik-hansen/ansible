@@ -9,11 +9,11 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 10.1.71.6-10.1.71.255
+      - 10.1.72.6-10.1.72.255
       avoid-buggy-ips: true
     - name: reserved
       protocol: layer2
       addresses:
-      - 10.1.71.5/32
+      - 10.1.72.5/32
       avoid-buggy-ips: true
       auto-assign: false
