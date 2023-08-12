@@ -1,4 +1,4 @@
-#2023-08-07
+#2023-08-12
 #Fred
 alias kron='keylight --host 10.2.10.146 --on --brightness 70'
 alias klon='keylight --host 10.2.10.145 --on --brightness 70'
@@ -12,6 +12,7 @@ alias c='cmatrix'
 alias mpv='mpv --hwdec=vaapi --profile=gpu-hq'
 alias d='kubectl describe'
 alias du='du -sh'
+alias df='df -h -xtmpfs'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
