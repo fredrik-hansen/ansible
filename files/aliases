@@ -1,9 +1,9 @@
 #2023-08-13
 #Fred
-alias kron='keylight --host 10.2.10.146 --on --brightness 70'
-alias klon='keylight --host 10.2.10.145 --on --brightness 70'
-alias kroff='keylight --host 10.2.10.146 --off'
-alias kloff='keylight --host 10.2.10.145 --off'
+alias kron='keylight --host kleft --on --brightness 70'
+alias klon='keylight --host kright --on --brightness 70'
+alias kroff='keylight --host kleft --off'
+alias kloff='keylight --host kright --off'
 alias §='python3 ~/code/gpt/client.py'
 alias draw='conda activate draw && cd ~/draw && ls'
 alias sdweb='conda activate sdweb && cd ~/code/stable-diffusion-webui && ls'
