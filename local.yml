@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.4  - 
+# Version: 1.41  - 
 - hosts: localhost
   connection: local
   become: true
@@ -40,7 +40,6 @@
         - nemo
         - brightnessctl
         - iw
-        - iwgetid
         - pulseaudio
         - pavucontrol
     desktop_pkgs:
