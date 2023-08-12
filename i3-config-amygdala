@@ -60,12 +60,48 @@ bindsym $mod+q kill
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
- bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+# spotify: no border
+for_window [class="^Spotify$"] border none
+for_window [class="^Spotify Premium$"] border none
+
+# skype, steam, wine: float Gimp
+for_window [class="Code"] floating enable
+for_window [class="Com.system76.FirmwareManager"] floating enable
+for_window [class="Firefox"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="google-chrome"] floating enable
+for_window [class="Google-chrome"] floating enable
+for_window [class="Keybase"] floating enable
+for_window [class="Kicad"] floating enable
+for_window [class="Logic"] floating enable
+for_window [class="Neoman"] floating enable
+for_window [class="NES"] floating enable
+for_window [class="Nvidia-settings"] floating enable
+for_window [class="OpenSCAD"] floating enable
+for_window [class="Pidgin"] floating enable
+for_window [class="Portal"] floating enable
+for_window [class="RStudio"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Slack"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Tor Browser"] floating enable
+for_window [class="Virt-manager"] floating enable
+for_window [class="Virt-viewer"] floating enable
+for_window [class="VirtualBox"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Wireshark"] floating enable
+for_window [class="zoom"] floating enable
+
+# lock screen
+bindsym $mod+l exec $lockcmd -c 111111
 
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+bindsym $mod+m focus up
 bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
@@ -193,8 +229,8 @@ bar {
 	tray_output none
 	status_command ~/.local/bin/bumblebee-status  -m load sensors \
 		memory battery brightness pasink pasource bluetooth date time  \
-		-p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
-		-t solarized-powerline 
+		-p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" battery.device="CMB0"\
+		-t solarized-powerline
 }
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
