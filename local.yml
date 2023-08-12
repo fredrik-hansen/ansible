@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.3  - 
+# Version: 1.4  - 
 - hosts: localhost
   connection: local
   become: true
@@ -38,7 +38,6 @@
         - tmux
         - mpv
         - nemo
-        - blueman-manager
         - brightnessctl
         - iw
         - iwgetid
