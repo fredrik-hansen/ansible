@@ -45,6 +45,7 @@
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
+        - pcmanfm
     developer_pkgs:
         - awscli
         
