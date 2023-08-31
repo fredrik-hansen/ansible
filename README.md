@@ -1,7 +1,7 @@
 ### Configs for ansible
 
 #### How to use:
-`sudo apt install ansible`
+`sudo apt install ansible git`
 
 `sudo ansible-pull -o -U https://github.com/fredrik-hansen/ansible.git`
 
