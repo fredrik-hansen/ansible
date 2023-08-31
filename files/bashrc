@@ -121,8 +121,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# source /opt/deepops/env/bin/activate  # commented out by conda initialize
-
+if [ -d "~/miniconda3" ]; then
+  mkdir -p ~/miniconda3
+  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+  bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+  rm -rf ~/miniconda3/miniconda.sh
+  bash source ~/.bashrc
+fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/pki/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
