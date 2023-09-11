@@ -1,4 +1,4 @@
-#2023-08-13
+#2023-09-11
 #Fred
 alias kron='keylight --host kleft --on --brightness 70'
 alias klon='keylight --host kright --on --brightness 70'
@@ -28,3 +28,5 @@ alias svc='kubectl get svc -A'
 alias pvc='kubectl get pvc -A'
 alias top='btop'
 alias kclean='kubectl delete pods --field-selector status.phase!=Running --all-namespaces'
+alias 8k='xrandr --output HDMI-0 --mode 7680x4320 --rate 60.00'
+alias 4k='xrandr --output HDMI-0 --mode 3840x2160 --rate 60.00'
