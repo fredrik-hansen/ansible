@@ -1,7 +1,7 @@
-#2023-09-11
+#2023-09-12
 #Fred
-alias kron='keylight --host kleft --on --brightness 70'
-alias klon='keylight --host kright --on --brightness 70'
+alias kron='keylight --host kleft --on --brightness 30'
+alias klon='keylight --host kright --on --brightness 30'
 alias kroff='keylight --host kleft --off'
 alias kloff='keylight --host kright --off'
 alias §='python3 ~/code/gpt/client.py'
