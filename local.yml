@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.43  - 
+# Version: 1.44  - 
 - hosts: localhost
   connection: local
   become: true
@@ -42,6 +42,8 @@
         - iw
         - pulseaudio
         - pavucontrol
+        - rsyslog-gnutls 
+        - rsyslog-kafka
     desktop_pkgs:
         - kde-spectacle
         - cmatrix
