@@ -1,9 +1,10 @@
-#2023-09-12
+#2023-12-06
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
 alias kroff='keylight --host kleft --off'
 alias kloff='keylight --host kright --off'
+alias headset='sudo bluetoothctl connect 4C:87:5D:28:94:1A'
 alias §='python3 ~/code/gpt/client.py'
 alias draw='conda activate draw && cd ~/draw && ls'
 alias sdweb='conda activate sdweb && cd ~/code/stable-diffusion-webui && ls'
