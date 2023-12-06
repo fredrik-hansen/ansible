@@ -1,4 +1,4 @@
-#2023-12-06
+#2023-12-06-00
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
