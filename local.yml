@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.49 - 
+# Version: 1.50 - 
 - hosts: localhost
   connection: local
   become: true
@@ -10,7 +10,6 @@
     ansible_user: velociraptor
     base_pkgs:
         - btop
-        - tldr
         - htop
         - net-tools
         - whois
