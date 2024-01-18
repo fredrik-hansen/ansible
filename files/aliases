@@ -1,4 +1,4 @@
-#2023-12-06-00
+#2024-01-18
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
@@ -31,3 +31,4 @@ alias top='btop'
 alias kclean='kubectl delete pods --field-selector status.phase!=Running --all-namespaces'
 alias 8k='xrandr --output HDMI-0 --mode 7680x4320 --rate 60.00'
 alias 4k='xrandr --output HDMI-0 --mode 3840x2160 --rate 60.00'
+alias 144='xrandr --output HDMI-0 --mode 3840x2160 --rate 144'
