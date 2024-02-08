@@ -1,4 +1,4 @@
-#2024-01-30
+#2024-02-08
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
@@ -36,3 +36,4 @@ alias neo='ssh neo'
 alias bf='ssh bigfoot'
 alias amd='ssh amd'
 alias ag='conda activate ag'
+alias pip='python3 -m pip'
