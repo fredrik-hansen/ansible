@@ -1,6 +1,6 @@
 ---
 # Author: Fredrik Hansen
-# Version: 1.52 - 
+# Version: 1.53 - 
 - hosts: localhost
   connection: local
   become: true
@@ -18,8 +18,6 @@
         - git-lfs
         - git-extras
         - colorize
-        - docker
-        - docker-compose
         - feh
         - software-properties-common
         - stow
