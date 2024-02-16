@@ -1,4 +1,4 @@
-#2024-02-08
+#2024-02-16
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
@@ -35,5 +35,5 @@ alias 144='xrandr --output HDMI-0 --mode 3840x2160 --rate 144'
 alias neo='ssh neo'
 alias bf='ssh bigfoot'
 alias amd='ssh amd'
-alias ag='conda activate ag'
+alias ag='conda activate ag && cd ~/code/autogenstudio'
 alias pip='python3 -m pip'
