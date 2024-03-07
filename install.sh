@@ -2,6 +2,8 @@
 
 # Default packages are for the configuration and corresponding .config folders
 # Install packages after installing base Debian with no GUI
+#Remove the file to be able to install properly
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 # xorg display server installation
 sudo apt install -y xserver-xorg xinit
