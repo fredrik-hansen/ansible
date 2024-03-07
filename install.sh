@@ -18,7 +18,7 @@ sudo apt install -y python3-xcffib python3-cairocffi
 # Install qtile
 pip3 install qtile
 pip3 install psutil
-
+pip3 install pywal
 # Microcode for Intel/AMD 
 # sudo apt install -y amd64-microcode
 sudo apt install -y intel-microcode 
