@@ -3,6 +3,9 @@
 # Default packages are for the configuration and corresponding .config folders
 # Install packages after installing base Debian with no GUI
 
+# Ditch the pip blocker
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+
 # xorg display server installation
 sudo apt install -y xserver-xorg xinit
 
@@ -16,6 +19,10 @@ sudo apt install -y python3-xcffib python3-cairocffi
 # Install qtile
 pip3 install qtile
 pip3 install psutil
+
+# Install extras and dbus-next in userland
+python3 -m pip install qtile_extras 
+python3 -m pip install dbus-next
 
 # Microcode for Intel/AMD 
 # sudo apt install -y amd64-microcode
@@ -52,7 +59,7 @@ sudo apt install -y exa
 
 # Printing and bluetooth (if needed)
 sudo apt install -y cups
-# sudo apt install -y bluez blueman
+sudo apt install -y bluez blueman
 
 # sudo systemctl enable bluetooth
 sudo systemctl enable cups
