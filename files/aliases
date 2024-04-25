@@ -1,4 +1,4 @@
-#2024-02-16
+#2024-04-25
 #Fred
 alias kron='keylight --host kleft --on --brightness 30'
 alias klon='keylight --host kright --on --brightness 30'
@@ -27,6 +27,7 @@ alias pods='kubectl get pods -A'
 alias podsall='kubectl get pods -A -o custom-columns=NAMESPACE:.metadata.namespace,NAME:.metadata.name,NODE:.spec.nodeName,HOSTIP:.status.hostIP,PHASE:.status.phase,START_TIME:.metadata.creationTimestamp --sort-by=.metadata.creationTimestamp'
 alias svc='kubectl get svc -A'
 alias pvc='kubectl get pvc -A'
+alias pv='kubectl get pv -A'
 alias top='btop'
 alias kclean='kubectl delete pods --field-selector status.phase!=Running --all-namespaces'
 alias 8k='xrandr --output HDMI-0 --mode 7680x4320 --rate 60.00'
