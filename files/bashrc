@@ -151,6 +151,7 @@ export LANG=en_US.UTF-8
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/pki/.mujoco/mujoco210/bin
 git config --global user.email "fredrik.hansen@eve.sx"
 git config --global user.name "Fredrik Hansen"
+git config http.postBuffer 524288000c
 if [ -d ".git" ]; then
   git config credential.helper store
 else
