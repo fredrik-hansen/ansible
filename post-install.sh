@@ -17,3 +17,22 @@ sudo apt install firefox
 $template remote-incoming-logs, "/var/log/hosts/%HOSTNAME%/%PROGRAMNAME%.log"
 *.* ?remote-incoming-logs
 & ~
+
+
+
+# Fix crackling sound
+mkdir ~/.config/pipewire
+cp /usr/share/pipewire/*.conf ~/.config/pipewire
+chown $USER ~/.config/pipewire/pipewire-pulse.conf
+Edit the pulse-properties.conf file
+
+nano ~/.config/pipewire/pipewire-pulse.conf
+
+Find the pulse properties section, uncomment the following keys, and set their values to either 512 or 1024
+
+pulse.min.req = 1024/48000
+
+pulse.min.frag = 1024/48000
+
+pulse.min.quantum = 1024/48000 
+systemctl --user restart pipewire.service
