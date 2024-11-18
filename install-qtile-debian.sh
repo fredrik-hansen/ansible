@@ -83,6 +83,8 @@ sudo apt install -y micro
 # Install fonts and papirus icon theme and arc-theme
 sudo apt install -y fonts-font-awesome fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus
 
+sudo apt install -y thefuck terminator 
+
 # Create folders in user directory (eg. Documents,Downloads,etc.)
 xdg-user-dirs-update
 
