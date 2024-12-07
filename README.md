@@ -48,3 +48,10 @@ If you had previously installed CUDA using the cudatoolkit package and want to m
     cuda-nvtx
 
     cuda-cupti
+
+
+
+LATEST_VERSION=$(curl -s "https://api.github.com/repos/ddo/fast/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+
+curl -L https://github.com/ddo/fast/releases/download/v${LATEST_VERSION}/fast_linux_$(dpkg --print-architecture) -o fast
+
